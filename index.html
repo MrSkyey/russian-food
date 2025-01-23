@@ -1,0 +1,27 @@
+### home.html
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="This website is about ordering Russian food from a Russian Restaurant">
+  <meta name="keywords" content="russian restaurant booking, traditional Russian cuisine, authentic russian menu, book a table russian eatery, online reservations russian dining, russian food booking system, russian dishes and drinks, clarke jones,">
+  <meta name="author" content="Clarke Jones">
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <title>Russian Food</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Welcome to the Russian Food Restaurant</h1>
+    <a href="/book-table/">Book a Table</a>
+    <h2>Menu</h2>
+    <ul>
+        {% for item in menu %}
+        <li>{{ item.name }} - ${{ item.price }}<br>{{ item.description }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
