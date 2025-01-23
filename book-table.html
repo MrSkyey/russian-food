@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book a Table</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Book a Table</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="table_id">Table:</label>
+        <select name="table_id" required>
+            {% for table in tables %}
+            <option value="{{ table.id }}">{{ table }}</option>
+            {% endfor %}
+        </select>
+        <label for="date">Date:</label>
+        <input type="date" name="date" required>
+        <label for="time">Time:</label>
+        <input type="time" name="time" required>
+        <label for="guests">Guests:</label>
+        <input type="number" name="guests" required>
+        <button type="submit">Book</button>
+    </form>
+</body>
+</html>
